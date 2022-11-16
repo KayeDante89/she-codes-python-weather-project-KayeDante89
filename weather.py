@@ -5,6 +5,7 @@ DEGREE_SYBMOL = u"\N{DEGREE SIGN}C"
 
 
 def format_temperature(temp):
+
     # """Takes a temperature and returns it in string format with the degrees
     #     and celcius symbols.
 
@@ -13,6 +14,7 @@ def format_temperature(temp):
     # Returns:
     #     A string contain the temperature and "degrees celcius."
     # """
+
     return f"{temp}{DEGREE_SYBMOL}"
 
 
@@ -25,7 +27,6 @@ def convert_date(iso_string):
 
 print(convert_date)
 
-# print(convert_date)
     # """Converts and ISO formatted date into a human readable format.
 
     # Args:
@@ -94,6 +95,8 @@ def load_data_from_csv(csv_file):
             data.append(int(line[2]))
         
         split_lists = [data[x:x+3] for x in range(0, len(data), 3)]
+
+        # I found above code online. I'm sure there is a simpler way to do this.
         
         return split_lists
 
@@ -222,8 +225,6 @@ def generate_daily_summary(weather_data):
         daily_summary.append(summary)
 
     result = ''.join(daily_summary)
-
-    # print(result)   
 
     return result
 
